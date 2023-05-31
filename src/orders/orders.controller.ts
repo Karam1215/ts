@@ -1,6 +1,7 @@
 import { OrdersService } from './orders.service';
 import { Body, Controller, Delete, Get, Param, Post, Put} from '@nestjs/common';
 import { Order } from './entities/order.entity';
+import { OrderDto } from 'src/orders/order.DTO';
 
 
 @Controller('orders')
@@ -25,8 +26,8 @@ findOne(@Param('id') id: string) {
   }
 
   @Post()
-  create(@Body() createOrder: Order) {
-    return this.ordersService.create(createOrder);
+  create(@Body() createOrderDto: OrderDto) {
+    return this.ordersService.create(createOrderDto);
   }
 
 
@@ -35,4 +36,3 @@ remove(@Param('id') id: string) {
   return this.ordersService.remove(+id);
 }
 }
-

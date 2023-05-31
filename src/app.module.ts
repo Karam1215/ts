@@ -4,6 +4,7 @@ import { DatasourceModule } from './datasource/datasource.module';
 import { OrdersModule } from './orders/orders.module';
 import { ClientsModule } from './clients/clients.module';
 import { GoodsModule } from './goods/goods.module';
+import { SellersModule } from './sellers/sellers.module';
 
 @Module({
   imports: [
@@ -11,11 +12,13 @@ import { GoodsModule } from './goods/goods.module';
     GoodsModule,
     OrdersModule,
     DatasourceModule,
+    SellersModule,
     TypeOrmModule.forRoot({
       type: 'postgres', //тип подключаемой БД
       port: 5432, //порт
       username: 'education', //имя пользователя
       password: 'password', //пароль
+      database: "education",
       host: 'localhost', //хост, в нашем случае БД развернута локально
       synchronize: false, //отключаем автосинхронизацию(в противном случае при каждом перезапуске наша БД будет создаваться заново)
       logging: 'all', //включим логирование для удобства отслеживания процессов

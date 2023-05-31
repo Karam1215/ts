@@ -25,10 +25,7 @@ findOne(@Param('id') id: string) {
     return this.goodsService.update(+id, updateGood);
   }
 
-  @Post()
-  create(@Body() createGood: Goods) {
-    return this.goodsService.create();
-  }
+  @Post() create(@Body() createGood: Goods) { return this.goodsService.create(createGood); }
 
 
 @Delete(':id')

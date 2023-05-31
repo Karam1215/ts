@@ -19,5 +19,4 @@ export class Goods {
   @ManyToOne(() => Order, (order) => order.goods)
   order: Order;
 
-  
 }

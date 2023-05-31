@@ -13,10 +13,10 @@ export class GoodsService {
     private readonly goodRepository: Repository<Goods>,
   ) {}
 
-  async create(): Promise<Goods> {
-    const goods = this.goodRepository.create();
-    return this.goodRepository.save(goods);
-  }
+  async create(createGood: Goods): Promise<Goods> {
+        const goods = this.goodRepository.create(createGood);
+        return this.goodRepository.save(goods);
+      }
 
   findOne(id: number): Promise<Goods> {
     return this.goodRepository.findOne({

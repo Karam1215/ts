@@ -2,8 +2,6 @@ import { Order } from 'src/orders/entities/order.entity';
 import {
   Column,
   Entity,
-  JoinTable,
-  ManyToMany,
   PrimaryGeneratedColumn,
   OneToMany,
   Unique
@@ -17,6 +15,6 @@ export class Client {
   id: number;
   @Column({}) //колонка таблицы, сюда можно добавить большое количество параметров для БД, например тип, уникальность, триггер и т.д.
   fullname: string;
-  @OneToMany(() => Order, (order) => order.client)
+  @OneToMany(() => Order, (order) => order.clients)
   orders: Order[];
 }

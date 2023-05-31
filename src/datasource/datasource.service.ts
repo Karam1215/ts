@@ -6,6 +6,12 @@ import { Order } from 'src/orders/entities/order.entity'
 
 @Injectable()
 export class DatasourceService {
+  getSellers() {
+      throw new Error('Method not implemented.');
+  }
+  getSeller() {
+      throw new Error('Method not implemented.');
+  }
   private clients: Client[] = [];
   private goods: Goods[] = [];
   private orders: Order[] = [];

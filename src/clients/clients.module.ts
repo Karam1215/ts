@@ -9,6 +9,6 @@ import { Client } from './entity/clients.entity';
   controllers: [ClientsController],
   providers: [ClientsService],
   imports: [DatasourceModule,
-    TypeOrmModule.forFeature([Client,/*hon 5ra */]),],
+    TypeOrmModule.forFeature([Client,/*hon shomakan */]),],
 })
 export class ClientsModule {}
